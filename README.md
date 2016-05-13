@@ -2,8 +2,8 @@
 
 # How to use
 ```
-git clone https://github.com/SQLab/sqlab_website
-cd sqlab_website/
+git clone https://github.com/bamboofox/bamboofox_website
+cd bamboofox_website
 npm install
 hexo server
 ```
