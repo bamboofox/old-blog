@@ -7,5 +7,11 @@ cd bamboofox_website
 npm install
 hexo server
 ```
-See it on http://0.0.0.0:4000/
+See it at http://0.0.0.0:4000/
+# How to deploy
+```
+hexo generate
+hexo deploy
+```
+See it at http://bamboofox.github.io/
 
