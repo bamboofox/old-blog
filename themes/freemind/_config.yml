@@ -22,18 +22,22 @@ menu:
     icon: "fa fa-user"
 
 links:
-  - title: Freemind
-    url: https://github.com/wzpan/freemind/
-    intro: "Freemind's Github repository."
+  - title: "Training Website"
+    url: http://train.cs.nctu.edu.tw/
+    intro: "Training Website"
+    icon: "fa fa-book"
+  - title: "Bamboofox Facebook"
+    url: https://www.facebook.com/groups/bamboofox/
+    intro: "Bamboofox Facebook"
+    icon: "fa fa-facebook-official"
+  - title: "Bamboofox Github"
+    url: https://github.com/bamboofox
+    intro: "Bamboofox Github"
     icon: "fa fa-github"
-  - title: "My Github"
-    url: http://www.github.com/wzpan
-    intro: "My Github account."
-    icon: "fa fa-github"
-  - title: "My LinkedIn"
-    url: http://www.linkedin.com/in/hahack
-    intro: "My Linkin account."
-    icon: "fa fa-linkedin"
+  - title: "Bamboofox slack channel"
+    url: https://bamboofox.slack.com/
+    intro: "Bamboofox slack channel"
+    icon: "fa fa-slack"
 
 widgets:
 - search
