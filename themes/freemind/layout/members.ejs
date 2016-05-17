@@ -1,0 +1,26 @@
+<!-- title -->
+<div class="page-header <% if (theme.inverse){ %>page-header-inverse <% } %>">
+	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-users"></i> <%= page.title %></h1>
+</div>
+
+<div class="row page">
+
+	<% if (theme.widgets.length) { %>
+	<div class="col-md-9">
+	<% } else { %>
+	<div class="col-md-12">
+	<% } %>
+
+<div id="top_search"></div>
+
+This is members page.
+
+/* TODO */
+
+</div> <!-- col-md-9 -->
+
+	<% if (theme.widgets.length) { %>
+		<%- partial('_partial/sidebar') %>
+	<% } %>
+
+</div> <!-- row-fluid -->

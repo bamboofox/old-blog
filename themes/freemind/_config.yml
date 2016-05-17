@@ -16,6 +16,10 @@ menu:
     url: tags
     intro: "All the tags."
     icon: "fa fa-tags"
+  - title: Members
+    url: members
+    intro: "All the members."
+    icon: "fa fa-users"
   - title: About
     url: about
     intro: "About me."
