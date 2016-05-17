@@ -8,6 +8,11 @@ npm install
 hexo server
 ```
 See it at http://0.0.0.0:4000/
+
+## Hexo-admin
+
+Admin page is at http://0.0.0.0:4000/admin/
+
 # How to deploy
 ```
 hexo generate
