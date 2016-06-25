@@ -538,3 +538,16 @@ td {
   *zoom: 1;
 }
 
+/*
+ * custom by Bamboofox team 
+ */
+.about-profile-png{
+  margin: 10px;
+  border-radius: 10px;
+  display: inline;
+  box-shadow: 6px 6px 3px #888888;
+}
+.about-profile-png:hover {
+ transform: scale(1.1);
+}
+
