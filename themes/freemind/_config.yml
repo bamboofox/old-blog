@@ -11,19 +11,19 @@ menu:
   - title: Categories
     url: categories
     intro: "All the categories."
-    icon: "fa fa-folder"
+    icon: "fa fa-folder-open"
   - title: Tags
     url: tags
     intro: "All the tags."
-    icon: "fa fa-tags"
+    icon: "fa fa-tag"
   - title: Members
     url: members
     intro: "All the members."
-    icon: "fa fa-users"
+    icon: "fa fa-user"
   - title: About
     url: about
     intro: "About me."
-    icon: "fa fa-user"
+    icon: "fa fa-info-circle"
 
 links:
   - title: "Training Website"
