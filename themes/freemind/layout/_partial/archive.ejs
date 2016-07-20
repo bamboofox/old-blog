@@ -39,7 +39,7 @@
 	  <div class="archive">
 		<% posts.sort('date', -1).each(function(item){ %>
 		<%
-		   year = item.date.toDate().getFullYear();
+                  year = item.date.toDate().getFullYear();
 		   month = item.date.toDate().getMonth();	   
 		%>
 		<% if (year != last_year){ %>
