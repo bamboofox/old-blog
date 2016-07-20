@@ -1,6 +1,6 @@
 <!-- title -->
 <div class="page-header <% if (theme.inverse){ %>page-header-inverse <% } %>">
-	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-user"></i> <%= page.title %></h1>
+	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-info-circle"></i> <%= page.title %></h1>
 </div>
 
 <div class="row page">
@@ -13,11 +13,15 @@
 
 <div id="top_search"></div>
 
-<%- image_tag("/img/profile.png", {class: "about-profile-png", height: 600, width: 300}) %>
-
-This is about page.
-
-/* TODO */
+<div class="row">
+    <div class="col-md-4">
+        <%- image_tag("/img/profile.png", {class: "about-profile-png", height: 600, width: 300}) %>
+    </div>
+    <div class="col-md-7 col-md-offset-1">
+        <p class="awesome"><span>我們是誰?</span>起源於交大，致力於資訊安全的社群</p>
+        <p class="awesome"><span>我們的目標?</span>學習研究各式各樣的資安技術</p>
+    </div>
+</div>
 
 </div> <!-- col-md-9 -->
 

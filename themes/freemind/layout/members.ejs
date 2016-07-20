@@ -1,6 +1,6 @@
 <!-- title -->
 <div class="page-header <% if (theme.inverse){ %>page-header-inverse <% } %>">
-	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-users"></i> <%= page.title %></h1>
+	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-user"></i> <%= page.title %></h1>
 </div>
 
 <div class="row page">
@@ -13,9 +13,35 @@
 
 <div id="top_search"></div>
 
-This is members page.
+<% var now = 1; %>
+<% site.data.member.executive.forEach(function(profile){ %>
+    <% now = 1-now; %>
+    <% if(now === 0){ %>
+    <div class="row space-between">
+    <% } %>
+    <div class="member-container col-md-4 col-md-offset-1">
+        <h2><%= profile['name'] %></h2>
+        <div class="img-shadow">
+            <img src="/img/<%= profile['id'] %>.png"/>
+        </div>
+        <div class="position">
+            <%= profile['post'] %>
+        </div>
+        <a href="<%= profile['github'] %>" class="github">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </div>
+    <% if(now === 1){ %>
+    </div>
+    <% } %>
+<% }); %>
 
-/* TODO */
+<% if(now === 0){ %>
+    </div>
+<% } %>
 
 </div> <!-- col-md-9 -->
 
