@@ -20,6 +20,10 @@ menu:
     url: members
     intro: "All the members."
     icon: "fa fa-user"
+  - title: History
+    url: history
+    intro: "History."
+    icon: "fa fa-history"
   - title: About
     url: about
     intro: "About me."

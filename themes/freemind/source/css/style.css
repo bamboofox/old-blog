@@ -616,6 +616,15 @@ td {
     background-image: url("/img/wood.jpg");
     z-index: -1;
 }
+/* 
+ * History page
+ */
+.history-event{
+    float: left;
+}
+.history-time{
+    float: right;
+}
 .awesome{
     font-size: 20px;
 }

@@ -1,0 +1,30 @@
+<!-- title -->
+<div class="page-header <% if (theme.inverse){ %>page-header-inverse <% } %>">
+	 <h1 class="title <% if (theme.inverse){ %>title-inverse <% } %>"><i class="fa fa-user"></i> <%= page.title %></h1>
+</div>
+
+<div class="row page">
+
+	<% if (theme.widgets.length) { %>
+	<div class="col-md-9">
+	<% } else { %>
+	<div class="col-md-12">
+	<% } %>
+
+<div id="top_search"></div>
+
+<% site.data.history.data.forEach(function(data){ %>
+    <div class="history-container clearfix">
+        <p class="history-event"><%= data['event'] %></p>
+        <p class="history-time"><%= data['time'] %></p>
+    </div>
+<% }); %>
+
+
+</div> <!-- col-md-9 -->
+
+	<% if (theme.widgets.length) { %>
+		<%- partial('_partial/sidebar') %>
+	<% } %>
+
+</div> <!-- row-fluid -->
