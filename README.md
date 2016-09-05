@@ -2,7 +2,23 @@
 
 # Install Hexo
 
-[Hexo official website](https://hexo.io/zh-tw/docs/)
+## Install npm
+
+```bash
+sudo apt-get install -y npm
+```
+
+## Install nodejs
+
+```bash
+sudo apt-get install -y nodejs-legacy
+```
+
+## Install hexo
+
+```bash
+sudo npm install hexo-cli -g
+```
 
 # How to use
 ```
