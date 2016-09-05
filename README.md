@@ -1,5 +1,9 @@
 # bamboofox_website
 
+# Install Hexo
+
+[Hexo official website](https://hexo.io/zh-tw/docs/)
+
 # How to use
 ```
 git clone https://github.com/bamboofox/bamboofox_website
