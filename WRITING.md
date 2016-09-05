@@ -16,9 +16,9 @@ category: `write-ups`
 
 Ex: `write-ups` 
 
-tag: `CTF name` `problem_category`
+tag: `CTF name` `problem_category` `exploit technique`
 
-Ex: `MMA CTF 2nd 2016` `pwn`
+Ex: `MMA CTF 2nd 2016` `pwn` `format string`
 
 # Final
 
