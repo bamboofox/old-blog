@@ -21,9 +21,9 @@ Ex: [MMA CTF 2nd 2016] greeting 150
 
 category: `write-ups`
 
-Ex: write-ups
+Ex: `write-ups` 
 
-tag: `write-ups` `problem_category`
+tag: `CTF name` `problem_category`
 
-Ex: write-ups, pwn
+Ex: `MMA CTF 2nd 2016` `pwn`
 
