@@ -591,8 +591,8 @@ td {
 .member-container a.github:hover{
   color: #0066FF;
 }
-.position{
-  margin: 40px;
+.member-word{
+  margin: 20px;
   text-align: center;
 }
 .space-between{
