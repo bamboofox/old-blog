@@ -2,13 +2,6 @@
 
 This is a example for writing write-up
 
-# Install bamboofox website
-```
-git clone https://github.com/bamboofox/bamboofox_website
-cd bamboofox_website
-npm install
-hexo server
-```
 # Use admin page for writing 
 
 Admin page is at http://0.0.0.0:4000/admin/
