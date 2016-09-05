@@ -27,3 +27,7 @@ tag: `CTF name` `problem_category`
 
 Ex: `MMA CTF 2nd 2016` `pwn`
 
+# Final
+
+Create pull request to https://github.com/bamboofox/bamboofox_website
+
