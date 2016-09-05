@@ -20,3 +20,6 @@ hexo deploy
 ```
 See it at http://bamboofox.github.io/
 
+# WRTING
+
+Read on [WRITING](./WRITING.md) for more details.
