@@ -22,15 +22,29 @@ date: 2016-09-06 00:45:00
 
 https://www.idontplaydarts.com/2010/07/mongodb-is-vulnerable-to-sql-injection-in-php-at-least/
 
+POST http://gap.chal.ctf.westerns.tokyo/login.php
+
+user=admin&password[$ne]=true&submit=true
+
+就能夠成功登入
+
+`$ne` 是 `not equal` operator
+
+所以說要是資料庫裡的 password not equal 輸入的 password
+
+就能夠成功登入
+
+接下來的 payload 就會利用控制 operator 的方式爆出密碼
+
 # payload
 
 mongoDB 可以使用的 operator 可以參考以下連結
 
 https://docs.mongodb.com/manual/reference/operator/query/
 
-在這裡我使用的 regex 的形式
+在這裡我使用的 `regex` operator
 
-想法是 regex 的 pattern 使用 `^TWCTF{` 
+想法是 `regex` 的 pattern 使用 `^TWCTF{` 
 
 代表 `TMCTF{` 開頭的字串
 
