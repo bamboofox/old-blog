@@ -585,14 +585,14 @@ td {
 .member-container a.github{
   position: absolute;
   bottom: 10px;
-  left: 45%;
+  left: 43%;
   color: black;
 }
 .member-container a.github:hover{
   color: #0066FF;
 }
-.position{
-  margin: 40px;
+.member-word{
+  margin: 20px;
   text-align: center;
 }
 .space-between{
