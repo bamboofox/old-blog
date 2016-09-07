@@ -1,10 +1,10 @@
-title: 104學年暑訓
+title: 104 summer training
 author: 'bananaapple,0Alien0'
 tags:
   - club
 categories:
   - tutorial
-date: 2016-07-21 09:42:00
+date: 2016-07-21 06:25:00
 ---
 # [時程表](http://people.cs.nctu.edu.tw/~ckchen/bambooFox.html)
 
