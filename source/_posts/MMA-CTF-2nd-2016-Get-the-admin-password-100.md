@@ -3,6 +3,7 @@ author: bananaapple
 tags:
   - web
   - sql injection
+  - MMA CTF 2nd 2016
 categories:
   - write-ups
 date: 2016-09-06 00:45:00
