@@ -13,11 +13,17 @@
 
 <div id="top_search"></div>
 
-<% var now = 1; %>
+<% var now = -1; %>
 <% site.data.member.executive.forEach(function(profile){ %>
-    <% now = 1-now; %>
-    <% if(now === 0){ %>
+    <% now += 1; %>
+    <% if(now%2 === 0){ %>
     <div class="row space-between">
+    <% } %>
+    <% if(now === 0){ %>
+    <div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1 col-xs-11 col-xs-offset-1" style="padding:20px 0px 20px 0px;font-size:30px">現任幹部(第二屆)</div>
+    <% } %>
+    <% if(now === 4){ %>
+    <div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1 col-xs-11 col-xs-offset-1" style="padding:20px 0px 20px 0px;font-size:30px">前任幹部(第一屆)</div>
     <% } %>
     <div class="member-container col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
         <h2><%= profile['name'] %></h2>
@@ -37,12 +43,12 @@
             </span>
         </a>
     </div>
-    <% if(now === 1){ %>
+    <% if(now%2 === 1){ %>
     </div>
     <% } %>
 <% }); %>
 
-<% if(now === 0){ %>
+<% if(now%2 === 0){ %>
     </div>
 <% } %>
 

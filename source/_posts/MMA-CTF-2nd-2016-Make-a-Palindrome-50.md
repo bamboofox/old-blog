@@ -18,7 +18,7 @@ categories:
 
 題目是他給你好幾個單字要你拼成回文字
 
-b bba ab cc -> ab b cc bba 也就是 abbccbbai
+b bba ab cc -> ab b cc bba 也就是 abbccbba
 
 我想說先用暴力解解看(畢竟這只是 warm up 題)
 
