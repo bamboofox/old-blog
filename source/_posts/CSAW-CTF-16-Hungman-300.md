@@ -1,4 +1,4 @@
-title: '[CSAW CTF 16] Hungman 300'
+title: '[CSAW CTF 2016] Hungman 300'
 author: nae
 tags:
   - CSAW CTF 2016
@@ -8,7 +8,7 @@ categories:
   - write-ups
 date: 2016-09-19 23:33:00
 ---
-# [CSAW CTF 16] Hungman 300
+# [CSAW CTF 2016] Hungman 300
 
 > Category: pwn		
 > Point: 300	
