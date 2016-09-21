@@ -14,7 +14,12 @@ date: 2016-09-19 23:33:00
 > Point: 300	
 > Solver: nae @ BambooFox	
 
-第一次貢獻大分數給 BambooFox，雖然這次比賽比較簡單，但還是很感動QQ
+# [CSAW CTF 16] Hungman 300
+
+> Category: pwn		
+> Point: 300	
+> Solver: nae @ BambooFox	
+> 第一次貢獻大分數給 BambooFox，雖然這次比賽比較簡單，但還是很感動QQ
 
 64 bit ELF, NX, Partial RELRO, Stack Canary, no PIE
 
@@ -22,6 +27,7 @@ date: 2016-09-19 23:33:00
 
 name's heap & key_heap 的 memory layout 如下：
 
+~~~python
 	low     ->     high
 	+ ------------- +  name's heap chunk head
 	| previous size |
@@ -41,7 +47,7 @@ name's heap & key_heap 的 memory layout 如下：
 	| ------------- |
 	|  name's heap  |
 	+ ------------- +
-
+~~~
 輸入完名字之後，回到了 `main`，接著便進入玩遊戲的 function 以下稱為 game。
 
 遊戲是猜小寫英文字母，然後如果分數超過 64 分可以重新改名字，而改寫名字時可以在 heap 上進行 overflow。
@@ -103,3 +109,7 @@ payload += p64(malloc)
 ~~~
 
 之後再玩一次遊戲，然後改名字的時候隨便輸入就可以拿到 shell。
+
+	
+
+
