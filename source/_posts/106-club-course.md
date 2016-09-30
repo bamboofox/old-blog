@@ -10,7 +10,7 @@ date: 2016-09-27 02:14:00
 
 ## 9/30 第一堂社課
 
-- [Linux_and_SA](https://drive.google.com/file/d/0B2dY3bAMpyESQXpRalRKLVV5bUk/view)
+- [Linux_and_SA](https://drive.google.com/file/d/0B2dY3bAMpyESRy1nVUsyZ0lvQzQ/view?usp=sharing)
 - [Python](https://speakerdeck.com/bananaappletw/python)
 
 [Kali iso](http://cdimage.kali.org/kali-2016.2/kali-linux-2016.2-amd64.iso)
