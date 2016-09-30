@@ -43,7 +43,7 @@ links:
     intro: "Bamboofox Github"
     icon: "fa fa-github"
   - title: "Bamboofox slack channel"
-    url: https://bamboofox.slack.com/
+    url: https://bamboofox.herokuapp.com/
     intro: "Bamboofox slack channel"
     icon: "fa fa-slack"
 
