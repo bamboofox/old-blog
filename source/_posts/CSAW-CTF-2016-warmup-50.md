@@ -3,11 +3,11 @@ author: nae
 tags:
   - CSAW CTF 2016
   - pwn
+  - overflow
 categories:
   - write-ups
 date: 2016-09-19 23:31:00
 ---
-# [CSAW CTF 2016] warmup 50
 
 > Category: pwn		
 > Point: 50		
