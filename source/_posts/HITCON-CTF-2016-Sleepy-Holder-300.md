@@ -1,10 +1,12 @@
-title: '[Hitcon CTF 2016] Sleep Holder 300'
-
+---
+title: '[Hitcon CTF 2016] Sleepy Holder 300'
+author: Naetw
 tags:
   - pwn
   - heap
   - HITCON CTF 2016
   - Unlink
+  - GOT hijacking
 categories:
   - write-ups
 
@@ -12,7 +14,7 @@ date: 2016-10-15 22:30:00
 ---
 ## Info
 > Category: pwn		
-> point: 100
+> point: 300
 
 這題是看了 **meh** 的 writeup 提示才解出來的，heap 真是太深奧了QQ
 
@@ -45,7 +47,7 @@ if(!buf_in_use){
 ~~~
 keep 會問你要保存什麼樣的秘密，接著檢查是不是已經分配過了，如果沒有則根據 small(40), big(4000), huge(400000)，不同選擇來分配大小，之後可以 read 進該 size 的長度的 payload。但是 huge secret 只能夠 `calloc` 一次，之後就不能再動了。
 
-global buffer 上有三個 address 來存放這些 malloc 得到的記憶體位置，分別稱它為 small_buf, big_buf, huge_buf，除了這些之外，global buffer上還有 3 個 4bytes 的 buffer，來記錄這幾種秘密是不是 inuse。
+global buffer 上有三個 address 來存放這些 malloc 得到的記憶體位置，分別稱它為 `small_buf`, `big_buf`, `huge_buf`，除了這些之外，global buffer上還有 3 個 4bytes 的 buffer，來記錄這幾種秘密是不是 inuse。
 
 wipe
 ----
@@ -85,7 +87,7 @@ if(buf_in_use){
 3. wipe small
 4. keep huge
 
-這裡的 keep big 是為了不要讓 small chunk 跟 top chunk 合併，所以在 small chunk 跟 top chunk 中間放了 big chunk，之後把 small `free` 掉，在 call malloc(huge)，就會造成前面的 secret 所說的，把剛剛的 small chunk 從 fastbin list 移走，放到 small bin。
+這裡的 keep big 是為了不要讓 small chunk 跟 top chunk 合併，所以在 small chunk 跟 top chunk 中間放了 big chunk，之後把 small chunk `free` 掉，在 call malloc(huge)，就會造成前面的 secret 所說的，把剛剛的 small chunk 從 fastbin list 移走，放到 small bin。
 
 至於為什麼需要它放進 small bin 裡，原因是當初 `malloc` big chunk 的時候有把 big chunk 的 inuse bit 設成 1，我沒記錯的話是 default 都是 1，有 `free` 掉前面 chunk 才會被設成 0，被設成 1 的 code 如下：
 
