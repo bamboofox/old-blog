@@ -2,11 +2,10 @@ title: '[MMA CTF 2nd 2016] greeting 150'
 author: bananaapple
 tags:
   - MMA CTF 2nd 2016
-  - 'pwn '
+  - pwn
   - format string
 categories:
   - write-ups
-  - ''
 date: 2016-09-05 02:44:00
 ---
 # 題目說明
