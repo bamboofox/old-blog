@@ -8,19 +8,13 @@ categories:
   - write-ups
 date: 2016-09-19 23:33:00
 ---
-# [CSAW CTF 2016] Hungman 300
-
-> Category: pwn		
-> Point: 300	
-> Solver: nae @ BambooFox	
-
-# [CSAW CTF 16] Hungman 300
-
+## Info
 > Category: pwn		
 > Point: 300	
 > Solver: nae @ BambooFox	
 > 第一次貢獻大分數給 BambooFox，雖然這次比賽比較簡單，但還是很感動QQ
 
+## Analyzing
 64 bit ELF, NX, Partial RELRO, Stack Canary, no PIE
 
 程式一開始會要求輸入名字，而他會 `malloc` 名字長度的記憶體來存放使用者輸入的名字，接著會 `malloc` 一塊 0x80 大小的 heap，以下稱之為 `key_heap`，第一格**高位** 4 bytes 會存放 length of name，第二格則儲存著 name's heap 的位址。
@@ -91,12 +85,13 @@ score = *(_DWARD*)a1;
 
 GOT table 的 libc function order:
 
-	__libc_start_main@got.plt
-	__gmon_start__@got.plt
-	memcpy@got.plt
-	malloc@got.plt
-	setvbuf@got.plt
-	
+~~~
+__libc_start_main@got.plt
+__gmon_start__@got.plt
+memcpy@got.plt
+malloc@got.plt
+setvbuf@got.plt
+~~~	
 因為在改名字時有一段 code 是 `memcpy(*(void**)(a1+8), s, len_of_new_name)`，所以把 `memcpy` 的 GOT hijack 掉改成 `system`，要注意的點是改名字時會用到 `malloc` 而 `read` 會在結尾補 `\x00` 所以乾脆直接連 `malloc` 也一起蓋正確的 `libc address` 確保他不會壞，而 `malloc` 的下一個 function 後面用不到就不用管他。這邊 payload 開頭我就先送 `'sh\x00'` 上去這樣 `memcpy` 的一開始就可以直接 `system('sh')`。
 
 第二次的 payload:
