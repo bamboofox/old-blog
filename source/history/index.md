@@ -1,4 +1,4 @@
-title: history
+title: History
 layout: history 
 ---
 

@@ -1,3 +1,3 @@
-title: members
+title: Members
 layout: members
 ---
