@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+.page h3.title-top {
+  background-color: #fbdedb;
+  border-top: 3px solid #ef8b80;
+}
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -6897,6 +6901,13 @@ a.list-group-item-danger.active:focus {
 .page h3.title {
   background-color: #eeeeee;
   border-top: 3px solid #a2a2a2;
+}
+#ds-thread #ds-reset li.ds-tab a {
+  text-shadow: none!important;
+  color: #2a9fd6;
+}
+#ds-thread #ds-reset .ds-comment-body p {
+  color: #fff;
 }
 h1.title {
   color: #888888;
