@@ -1,5 +1,4 @@
----
-title: '[Hitcon CTF 2016] Sleepy Holder 300'
+title: '[HITCON CTF 2016 Quals] Sleepy Holder 300'
 author: Naetw
 tags:
   - pwn
@@ -9,12 +8,12 @@ tags:
   - GOT hijacking
 categories:
   - write-ups
-
 date: 2016-10-15 22:30:00
 ---
 ## Info
 > Category: pwn		
-> point: 300
+> Point: 300
+> Solver: Naetw @ BambooFox
 
 這題是看了 **meh** 的 writeup 提示才解出來的，heap 真是太深奧了QQ
 

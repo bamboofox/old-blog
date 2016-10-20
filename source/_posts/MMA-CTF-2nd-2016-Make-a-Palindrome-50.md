@@ -1,7 +1,7 @@
 title: '[MMA CTF 2nd 2016] Make a Palindrome 50'
 tags:
   - MMA CTF 2nd 2016
-  - ppc
+  - PPC
 categories:
   - write-ups
 author: 0Alien0
@@ -9,7 +9,7 @@ date: 2016-09-05 16:18:00
 ---
 # [MMA CTF 2nd 2016] Make a Palindrome 50
 
-> Category: ppc
+> Category: PPC
 > Point: 50
 > Solver: 0Alien0 @ BambooFox
 
