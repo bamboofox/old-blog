@@ -40,7 +40,7 @@ hexo deploy
 ```
 See it at http://bamboofox.github.io/
 
-# Docker Avalible
+# Docker Avaliable
 
 ## Build image with Dockerfile
 
