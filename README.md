@@ -82,7 +82,7 @@ parameter -a is used to look also the not running container
 ## Start the container if it is not running
 
 ```
-sudo docker start -it {your container name} bash
+sudo docker start -i {your container name}
 ```
 
 ## Stop the container if yout want to
@@ -91,6 +91,6 @@ sudo docker start -it {your container name} bash
 sudo docker stop {your container name}
 ```
 
-# WRTING
+# WRITING
 
 Read on [WRITING](./WRITING.md) for more details.
