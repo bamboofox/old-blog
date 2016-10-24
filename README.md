@@ -42,30 +42,19 @@ See it at http://bamboofox.github.io/
 
 # Docker Avaliable
 
-## Build image with Dockerfile
+## Pull the image
 
 ```
-mkdir {choose your directory name}
-cd {the directory name}
-cp {your Dockerfile path} .
-sudo docker build -t="{choose your image name}" .
-```
-
-Careful that you must make a directory and make sure it only contain the Dockerfile
-If you clone our directory from github you might want to do this
-
-```
-cd docker
-sudo docker build -t="{choose your image name}" .
+sudo docker pull bamboofox/bamboofox_website
 ```
 
 ## Run
 
 ```
-sudo docker run -it -p 4000:4000 --name {choose your container name} {your image name} bash
+sudo docker run -it -p 4000:4000 --name {choose your container name} bamboofox/bamboofox_website bash
 ```
 
-This step is to use the image we build previously to run up a new container
+This step is to use the image we pull previously to run up a new container
 parameter -p is to set the port forwarding (hexo server default port is 4000)
 parameter -i is to open the container's stdin
 parameter -t is to distrubute a tty to the container's stdin
