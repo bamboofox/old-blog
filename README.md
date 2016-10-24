@@ -55,8 +55,11 @@ sudo docker run -it -p 4000:4000 --name {choose your container name} bamboofox/b
 ```
 
 This step is to use the image we pull previously to run up a new container
+
 parameter -p is to set the port forwarding (hexo server default port is 4000)
+
 parameter -i is to open the container's stdin
+
 parameter -t is to distrubute a tty to the container's stdin
 
 ## Check current container
