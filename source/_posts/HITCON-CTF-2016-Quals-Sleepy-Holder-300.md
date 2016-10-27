@@ -13,7 +13,7 @@ date: 2016-10-15 22:30:00
 ## Info
 > Category: pwn		
 > Point: 300
-> Solver: Naetw @ BambooFox
+> Author: Naetw @ BambooFox
 
 這題是看了 **meh** 的 writeup 提示才解出來的，heap 真是太深奧了QQ
 
