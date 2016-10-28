@@ -26,7 +26,7 @@ date: 2016-09-27 02:14:00
 
 - [Some tips](https://speakerdeck.com/bananaappletw/some-tips)
 - [x86](https://speakerdeck.com/bananaappletw/x86)
-- [gdb]()
+- [gdb](https://speakerdeck.com/bananaappletw/gdb)
 
 ## 11/18 第四堂社課
 
