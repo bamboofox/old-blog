@@ -62,6 +62,16 @@ parameter -i is to open the container's stdin
 
 parameter -t is to distrubute a tty to the container's stdin
 
+## Git pull
+
+```
+git pull
+```
+
+Remember to pull the repo from github
+
+Since the repo in the image may not be the lastest one
+
 ## Check current container
 
 ```
