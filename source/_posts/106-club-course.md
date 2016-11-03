@@ -21,12 +21,16 @@ date: 2016-09-27 02:14:00
 ## 10/14 第二堂社課
 
 - [Web Security](https://drive.google.com/file/d/0B2WSYFS3T0qOcDNHcl9oTksxZTg/view)
+- [課程錄影](https://www.youtube.com/watch?v=wq9X2qIV-Xg)
+- [課程錄影](https://www.youtube.com/watch?v=HvhgTF_Upqk)
 
 ## 10/28 第三堂社課
 
 - [Some tips](https://speakerdeck.com/bananaappletw/some-tips)
 - [x86](https://speakerdeck.com/bananaappletw/x86)
+- [課程錄影](https://www.youtube.com/watch?v=32PvtalAC2A)
 - [gdb](https://speakerdeck.com/bananaappletw/gdb)
+- [課程錄影](https://www.youtube.com/watch?v=50acU6jrpkg)
 
 ## 11/18 第四堂社課
 
