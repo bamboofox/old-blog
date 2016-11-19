@@ -36,6 +36,7 @@ date: 2016-09-27 02:14:00
 
 - [Buffer overflow](https://speakerdeck.com/naetw/buffer-overflow)
 - [Demo](http://people.cs.nctu.edu.tw/~chaoyy1202/Demo.tar.gz)
+- [課程錄影](https://www.youtube.com/watch?v=oPAh0fy3eAo)
 
 ## 12/09 第五堂社課
 
