@@ -42,3 +42,4 @@ date: 2016-09-27 02:14:00
 
 - [ROP](https://drive.google.com/file/d/0B7_xqQeTuoLpejJ0SFQ5b3dMbWs/view)
 - [Demo](http://people.cs.nctu.edu.tw/~jyli8210/ROPDemo.tar.gz)
+- [課程錄影](https://youtu.be/QYmWq2o7MtA)
