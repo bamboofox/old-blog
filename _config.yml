@@ -64,6 +64,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: freemind
+# Disqus
+disqus_shortname: bamboofox
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
