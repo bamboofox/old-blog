@@ -43,3 +43,12 @@ date: 2016-09-27 02:14:00
 - [ROP](https://drive.google.com/file/d/0B7_xqQeTuoLpejJ0SFQ5b3dMbWs/view)
 - [Demo](http://people.cs.nctu.edu.tw/~jyli8210/ROPDemo.tar.gz)
 - [課程錄影](https://youtu.be/QYmWq2o7MtA)
+
+----------
+
+# 106 下學期社課
+
+## 03/03 第一堂社課
+
+- [Format String](https://drive.google.com/file/d/0B76OxXT0skp6NnZDbVB4UGYycUk/view)
+- [Demo](http://people.cs.nctu.edu.tw/~jyli8210/FMTdemo.tar.gz)
