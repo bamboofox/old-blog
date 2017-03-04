@@ -10,9 +10,9 @@ categories:
 date: 2017-03-01 16:38:40
 ---
 ## Info  
-> Category: pwn  
-> Point: 500 
-> Solver: Naetw @ BambooFox   
+> Category: pwn
+> Point: 300
+> Solver: Naetw @ BambooFox
 
 ## Analyzing
 
@@ -44,7 +44,7 @@ User name & password 設定好之後有五個選項：
 
 Leave message:
 
-* 首先會問 index，之後如果 size 正確會存入上面提到的 global buffer(這裡有個洞，程式並沒有對 index 的下界做檢查)
+* 首先會問 index，之後如果 size 正確會存入上面提到的 global buffer
 * 接著會問 msg size，如果大於 32 bytes，他只會呼叫 `malloc(32)` 給你，但是 read 完之後不會存入 global buffer 的 list 之中。這裡有一個 **overflow** 的漏洞，如果我 size 輸入 100，他雖然只有 `malloc(32)` 但是他會 read(0, buf, size)，因此後面可以利用這個洞改到其他 chunk struct
 * 如果 size 小於 32 bytes，在讀完 message 之後會存到上面提到的 list
 
