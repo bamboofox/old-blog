@@ -53,3 +53,9 @@ date: 2016-09-27 02:14:00
 - [Format String](https://drive.google.com/file/d/0B76OxXT0skp6NnZDbVB4UGYycUk/view)
 - [Demo](http://people.cs.nctu.edu.tw/~jyli8210/FMTdemo.tar.gz)
 - [課程錄影 part1](https://youtu.be/FvGhDlK36PI) / [part2](https://youtu.be/oiicCDA4RNc) / [part3](https://youtu.be/o3KXSayMvhw)
+
+## 03/17 第二堂社課
+
+- [題目1](http://secprog.cs.nctu.edu.tw/problems/12)
+- [題目2](http://secprog.cs.nctu.edu.tw/problems/13)
+- [課程錄影](https://www.youtube.com/watch?v=VXbYyYYcvdU)
