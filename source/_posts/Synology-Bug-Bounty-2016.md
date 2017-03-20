@@ -1,4 +1,3 @@
----
 title: '[Synology Bug Bounty 2016]'
 author: BambooFox
 tags:
@@ -19,7 +18,7 @@ Synology Bug Bounty Report
 > Author: BambooFox Team 
 > ( Henry, jpeanut, ding, leepupu, Angelboy, boik, adr, Mango King, Bletchley )
 
-Last year ( 2016 ) , we BambooFox are invited to join the Synology Bug Bounty program. After about 2 months of hacking, we discovered several vulnerabilities, including a **remote root code execution** vulnerability. Synology engineers response and fix the vulnerabilities in a very sort time, which shows they pay a lot of attention to  security issues.
+Last year ( 2016 ) , we BambooFox were invited to join the Synology Bug Bounty program. After about 2 months of hacking, we discovered several vulnerabilities, including a **remote root code execution** vulnerability. Synology engineers response and fix the vulnerabilities in a very sort time, which shows they pay a lot of attention to security issues.
 
 And now ( in 2017 ) , we are allowed to publish the vulnerabilities:  
 * [Vul-01 PhotoStation Login without password](#Vul-01-PhotoStation-Login-without-password )
@@ -88,7 +87,7 @@ Connection: close
 
 We adopted a similar approach (PoC1) in order to achieve RCE.
 
-We then took a deep look into the source code of PhotoStation, and found the following  code:
+We then took a deep look into the source code of PhotoStation, and found the following code:
 ```php
 if ($x_forward) {
     $ip = $x_forward;
@@ -132,7 +131,7 @@ Now we can wait for our reverse shell, with the root permission.
 ---
 We also found some other security flaws.
 If a user sends too many requests to `forget_passwd.cgi`, the user will be blocked by his IP, which is retrieved from the `X-Forwarded-For` header.
-However, `X-Forwarded-For` can be easily forged from the client side, therefore an attacker can block as many user as he want by forging the `X-Forwarded-For` header, leading a DoS attack.
+However, `X-Forwarded-For` can be easily forged from the client side, therefore an attacker can block as many users as he wants by forging the `X-Forwarded-For` header, leading a DoS attack.
 ![Block IP](http://i.imgur.com/aU9IDWm.png)
 
 ## Vul-06: Local File Inclusion
@@ -146,10 +145,10 @@ For example, we can use `../../../../../../var/services/homes/[username]/.gitcon
 
 ## Timeline
 * 2016/07/25 Report vulnerabilities to Synology
-* 2016/09/01 Confirm that all vulnerabilities has already been fixed by Synology
+* 2016/09/01 Confirm that all vulnerabilities have already been fixed by Synology
 * 2017/03/13 Confirm that we're allowed to publish the bug bounty report
 * 2017/03/20 Synology Bug Bounty Report published
 
 
 ## Note
-Some of the vulnerability has already been discovered by Lucas Leong from Trend Micro ( [link](http://seclists.org/oss-sec/2016/q1/236) )
+Some of the vulnerabilities have already been discovered by Lucas Leong from Trend Micro ( [link](http://seclists.org/oss-sec/2016/q1/236) )
