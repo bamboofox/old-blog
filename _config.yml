@@ -69,10 +69,17 @@ disqus_shortname: bamboofox
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: 
+deploy:
   type: git
   repo: https://github.com/bamboofox/bamboofox.github.io.git
 
 ## sitemap
 sitemap:
   path: sitemap.xml
+# feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:

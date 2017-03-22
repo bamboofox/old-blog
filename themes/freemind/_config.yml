@@ -28,6 +28,10 @@ menu:
     url: about
     intro: "About me."
     icon: "fa fa-info-circle"
+  - title: "Rss"
+    url: atom.xml
+    intro: "Rss Subscribe"
+    icon: "fa fa-rss"
 
 links:
   - title: "Training Website"
@@ -51,10 +55,9 @@ widgets:
 - search
 - category
 - tagcloud
-- recent_posts  
+- recent_posts
 - links
 
-rss: 
 fancybox: true
 favicon: img/favicon.png
 duoshuo_shortname:
