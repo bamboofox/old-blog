@@ -1,4 +1,3 @@
----
 title: '[Synology Bug Bounty 2016]'
 author: BambooFox
 tags:
@@ -19,7 +18,7 @@ Synology Bug Bounty Report
 > Author: BambooFox Team 
 > ( Henry, jpeanut, ding, leepupu, Angelboy, boik, adr, Mango King, Bletchley )
 
-Last year ( 2016 ) , we BambooFox were invited to join the Synology Bug Bounty program. After about 2 months of hacking, we discovered several vulnerabilities, including a **remote root code execution** vulnerability. Synology engineers response and fix the vulnerabilities in a very sort time, which shows they pay a lot of attention to security issues.
+Last year ( 2016 ) , we BambooFox were invited to join the Synology Bug Bounty program. After about 2 months of hacking, we discovered several vulnerabilities, including a **remote root code execution** vulnerability. Synology engineers response and fix the vulnerabilities in a very short time, which shows they pay a lot of attention to security issues.
 
 And now ( in 2017 ) , we are allowed to publish the vulnerabilities:  
 * [Vul-01 PhotoStation Login without password](#Vul-01-PhotoStation-Login-without-password )
