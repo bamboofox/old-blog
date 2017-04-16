@@ -59,3 +59,8 @@ date: 2016-09-27 02:14:00
 - [題目1](http://secprog.cs.nctu.edu.tw/problems/12)
 - [題目2](http://secprog.cs.nctu.edu.tw/problems/13)
 - [課程錄影](https://www.youtube.com/watch?v=VXbYyYYcvdU)
+
+## 04/18 第三堂社課
+
+- [Crypto 講義](https://drive.google.com/file/d/0B2WSYFS3T0qOUjRSdDRZUEdBbU0/view?usp=sharing)
+- [題目與工具](https://drive.google.com/file/d/0B2WSYFS3T0qOc0Q2YTdad3lTMms/view?usp=sharing)
