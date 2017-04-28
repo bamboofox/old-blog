@@ -65,3 +65,7 @@ date: 2016-09-27 02:14:00
 - [Crypto 講義](https://drive.google.com/file/d/0B2WSYFS3T0qOUjRSdDRZUEdBbU0/view?usp=sharing)
 - [題目與工具](https://drive.google.com/file/d/0B2WSYFS3T0qOc0Q2YTdad3lTMms/view?usp=sharing)
 - [課程錄影 part1](https://www.youtube.com/watch?v=kURuAjqFv9k) / [part2](https://www.youtube.com/watch?v=qyjaqF6p4hw) / [part3](https://www.youtube.com/watch?v=dkinSlwM5u8)
+
+## 04/28 第四堂社課
+
+- [Length Extension Attack](https://drive.google.com/file/d/0B2WSYFS3T0qOZ04xekRnZDRUZmc/view)
