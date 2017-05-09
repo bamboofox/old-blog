@@ -69,3 +69,8 @@ date: 2016-09-27 02:14:00
 ## 04/28 第四堂社課
 
 - [Length Extension Attack](https://drive.google.com/file/d/0B2WSYFS3T0qOZ04xekRnZDRUZmc/view)
+
+## 05/05 第五堂社課
+
+- [Web Security Basic](https://hackmd.io/p/BkKNiQzee#/)
+- [課程錄影](https://www.youtube.com/watch?v=jENhKE2yTOU&feature=youtu.be)
