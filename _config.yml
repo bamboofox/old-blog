@@ -62,6 +62,9 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugin:
+  - hexo-generator-feed
+
 ## Themes: https://hexo.io/themes/
 theme: freemind
 # Disqus
