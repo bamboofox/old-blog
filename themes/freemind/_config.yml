@@ -34,9 +34,9 @@ menu:
     icon: "fa fa-rss"
 
 links:
-  - title: "Training Website"
-    url: http://train.cs.nctu.edu.tw/
-    intro: "Training Website"
+  - title: "Bamboofox Website"
+    url: https://bamboofox.nctucs.net/
+    intro: "Bamboofox Website"
     icon: "fa fa-book"
   - title: "Bamboofox Facebook"
     url: https://www.facebook.com/groups/bamboofox/
