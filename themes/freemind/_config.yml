@@ -74,6 +74,5 @@ baidu_tongji:
 # swiftype_key: ZP2ZSuHgipSZfRyU8uTR
 
 # share widgets
-bdshare: true
+bdshare: false
 jiathis: false
-

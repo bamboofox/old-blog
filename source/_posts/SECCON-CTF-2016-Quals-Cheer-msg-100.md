@@ -27,7 +27,7 @@ date: 2016-12-12 08:24:00
 
 main:
 
-![main](http://i.imgur.com/HVWlCzl.png)
+![main](https://i.imgur.com/HVWlCzl.png)
 
 因為 `alloca`，main 裡有一行指令是 `sub esp, eax`，這個 eax 的值會是根據輸入的 message length 並做一些處理，所以想法是讓 eax 為負數，`sub esp, eax` 指令做完後，esp 的 address 高於 ebp，這樣在 call message 時，**因為 message function 的 stack frame 跟 main 的 stack frame 重疊**，就可以用 overflow 來 overwrite return address。
 
@@ -68,7 +68,7 @@ new      |..................|
 
 message:
 
-![message](http://i.imgur.com/W7cpuzP.png)
+![message](https://i.imgur.com/W7cpuzP.png)
 
 雖然因為輸入的 length 是負數，第一個 `getnline` 無法輸入，但是主要利用的是 **stack frame 的重疊**，所以要寫入的地方就著重在 local variable `v3` 上
 

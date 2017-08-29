@@ -59,7 +59,7 @@ The command will return 0 (True) and thus bypass the authentication.
 **Result:
 Adversary can login as admin without password**
 
-![Login without password](http://i.imgur.com/pnIWZ6t.png)
+![Login without password](https://i.imgur.com/pnIWZ6t.png)
 
 Adversary can also login as admin by the following PoC:
 
@@ -126,7 +126,7 @@ static $skipEscape = array('>', '<', '|', '&');
 
 As a result of the code above, `>`, `<`, `|` and `&` can be used to achieve command injection.
 
-![Remote Code Execution](http://i.imgur.com/qJxpKq8.png)
+![Remote Code Execution](https://i.imgur.com/qJxpKq8.png)
 
 ## Vul-03: Read-Write Arbitrary Files
 ---
@@ -141,7 +141,7 @@ With the previous Vul-02 ( RCE ) and Vul-03 ( Read-Write Arbitrary Files ), we c
 ```
 
 Now we can wait for our reverse shell, with the root permission.
-![Remote Code Execution](http://i.imgur.com/5YrQU54.jpg)
+![Remote Code Execution](https://i.imgur.com/5YrQU54.jpg)
 
 
 Also by exploiting Vul-02 and Vul-03, we're able to login the service as admin. If the admin is logged in, we can use the following command to get the admin's session ID:
@@ -160,14 +160,14 @@ Although the server side will check the admin's IP address, but the check can be
 We also found some other security flaws.
 If a user sends too many requests to `forget_passwd.cgi`, the user will be blocked by his IP, which is retrieved from the `X-Forwarded-For` header.
 However, `X-Forwarded-For` can be easily forged from the client side, therefore an attacker can block as many users as he wants by forging the `X-Forwarded-For` header, leading a DoS attack.
-![Block IP](http://i.imgur.com/aU9IDWm.png)
+![Block IP](https://i.imgur.com/aU9IDWm.png)
 
 ## Vul-06: Local File Inclusion
 ---
 There's a LFI (Local File Inclusion) vulnerability in `download.php`. The `id` parameter is controllable.  
 For example, we can use `../../../../../../var/services/homes/[username]/.gitconfig` to download a user's git config file.
 
-![Local File Inclusion](http://i.imgur.com/ZpL5Tw7.png)  
+![Local File Inclusion](https://i.imgur.com/ZpL5Tw7.png)  
 
 
 
