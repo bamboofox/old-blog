@@ -11,11 +11,11 @@ menu:
   - title: Categories
     url: categories
     intro: "All the categories."
-    icon: "fa fa-folder-open"
+    icon: "fa fa-folder"
   - title: Tags
     url: tags
     intro: "All the tags."
-    icon: "fa fa-tag"
+    icon: "fa fa-tags"
   - title: Members
     url: members
     intro: "All the members."
@@ -53,6 +53,7 @@ links:
 
 widgets:
 - search
+- recent_comments
 - category
 - tagcloud
 - recent_posts
@@ -76,3 +77,12 @@ baidu_tongji:
 # share widgets
 bdshare: false
 jiathis: false
+
+# built-in comment system
+comment_js:
+  type: "github"
+  user: "bamboofox"
+  repo: "bamboofox-blog"
+  client_id: "bf7d4ba11877db88543e"
+  client_secret: "bff8a6b06b745c0bfcdccbe225623ea8e2a057bb"
+  count: 2

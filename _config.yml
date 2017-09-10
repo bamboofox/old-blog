@@ -86,3 +86,6 @@ feed:
   limit: 20
   hub:
   content:
+search:
+  path: search.xml
+  field: post
