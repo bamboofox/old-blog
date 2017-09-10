@@ -12,7 +12,7 @@ date: 2016-07-21 06:25:00
 
 - [Security Master](https://drive.google.com/file/d/0Bw0V1Yd9ZxkEU25jWkxEN0YxQ0k/view)
 - [Linux and Shell](https://drive.google.com/file/d/0B2dY3bAMpyESQXpRalRKLVV5bUk/view?usp=sharing)
-- [x86](http://www.slideshare.net/ssuser55f15d/x86-50184001)
+- [x86](http://www.slideshare.net/bananaappletw/x86-50184001)
 - [Compile Link Execute](https://github.com/tjjh89017/compile_link)
 
 # 7/6
@@ -23,7 +23,7 @@ date: 2016-07-21 06:25:00
 # 7/19
 - [Malware Technique](https://drive.google.com/file/d/0Bw0V1Yd9ZxkEOWtSR1FoUGJfU1U/view?usp=sharing)
 - [Buffer overflow](https://docs.google.com/presentation/d/1AsIJ9q1rt8WUDtKO2pm8rSrEcXkuWJqcXPPBWaQGoYc/present?slide=id.p)
-- [Format String](http://www.slideshare.net/ssuser55f15d/format-string)
+- [Format String](http://www.slideshare.net/bananaappletw/format-string)
 
 # 7/20
 - [Shellcode](https://drive.google.com/open?id=0B7UcjiibMqcDZjByazl0WGhWQ00) 

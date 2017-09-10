@@ -10,16 +10,16 @@ date: 2016-07-21 06:24:00
 
 ## 10/2 第一堂社課
 - [Linux_and_SA](https://drive.google.com/file/d/0B32zFoFRABqia3pIaV9pbk91alU/view?usp=sharing)
-- [Python](http://www.slideshare.net/ssuser55f15d/python-64130536)
+- [Python](http://www.slideshare.net/bananaappletw/python-64130536)
 - [課程錄影](https://www.youtube.com/watch?v=T0Yv41ykMTo&list=PLrxoI5plXg30xkCQTSpoDrVYkM8ETKVaX)
 
 ## 10/16 第二堂社課
-- [Some tips](http://www.slideshare.net/ssuser55f15d/some-tips-54504718)
+- [Some tips](http://www.slideshare.net/bananaappletw/some-tips-54504718)
 - [Basic Reverse Engineering](https://drive.google.com/file/d/0Bw0V1Yd9ZxkEYlNpaThJdzJSSkE/view)
 - [課程錄影](https://www.youtube.com/watch?v=1adbzPhC-mk&list=PLrxoI5plXg31l9gUJjkE8qyBMPSmiiplV&index=4)
 
 ## 10/30 第三堂社課
-- [x86](http://www.slideshare.net/ssuser55f15d/x86-50184001)
+- [x86](http://www.slideshare.net/bananaappletw/x86-50184001)
 - [Buffer overflow](https://docs.google.com/presentation/d/1AsIJ9q1rt8WUDtKO2pm8rSrEcXkuWJqcXPPBWaQGoYc/present?slide=id.p)
 
 ## 11/20 第四堂社課
@@ -32,7 +32,7 @@ date: 2016-07-21 06:24:00
 ## 3/11 第一堂社課
 - [Dynamic Analysis](http://ncu.ddaa.tw/slides/dynamic-analysis.html#)
 - [Execution](http://www.slideshare.net/AngelBoy1/execution-50215114)
-- [Format String](http://www.slideshare.net/ssuser55f15d/format-string)
+- [Format String](http://www.slideshare.net/bananaappletw/format-string)
 - [課程錄影](https://www.youtube.com/watch?v=w6Y0-belcfY&feature=youtu.be)
 
 ## 3/25 第二堂社課
